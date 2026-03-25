@@ -6,15 +6,9 @@
     <title>Join MyITS Music - Modern Recruitment</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -32,7 +26,6 @@
         color: #334155;
       }
 
-      /* Sidebar Style untuk Desktop */
       .info-section {
         background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
         color: white;
@@ -136,17 +129,11 @@
     <div class="container-fluid p-0">
       <div class="row no-gutters">
         <div class="col-lg-5 info-section text-center text-lg-left">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/id/c/c4/Badge_ITS.png"
-            alt="ITS Logo"
-            class="brand-logo mx-auto mx-lg-0"
-          />
+          <img src="https://upload.wikimedia.org/wikipedia/id/c/c4/Badge_ITS.png" alt="ITS Logo" class="brand-logo mx-auto mx-lg-0" />
           <h1 class="display-4 font-weight-bold">Let's Make <span style="color: var(--accent-color)">Music</span> Together.</h1>
-          <p class="lead opacity-75">
-            Bergabunglah dengan UKM Musik ITS dan temukan panggungmu di sini.
-          </p>
+          <p class="lead opacity-75">Bergabunglah dengan UKM Musik ITS dan temukan panggungmu di sini.</p>
 
-          <div id="musicSlider" class="carousel slide carousel-modern" data-ride="carousel">
+          <div id="musicSlider" class="carousel slide carousel-modern">
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <img src="https://plus.unsplash.com/premium_photo-1683134695147-fba97d0aed0d?q=80&w=2071&auto=format&fit=crop&w=800" class="d-block w-100" alt="Studio2">
@@ -163,34 +150,32 @@
             <div class="custom-card">
               <h3 class="font-weight-bold mb-4">Formulir Pendaftaran</h3>
               
-              <form>
+              <form id="regForm">
                 <div class="row">
                   <div class="col-md-6 form-group">
                     <label class="small font-weight-bold">NAMA DEPAN</label>
-                    <input type="text" class="form-control" placeholder="Fahyi" />
+                    <input type="text" class="form-control" placeholder="Fahyi" required />
                   </div>
                   <div class="col-md-6 form-group">
                     <label class="small font-weight-bold">NAMA BELAKANG</label>
-                    <input type="text" class="form-control" placeholder="Nashaqi" />
+                    <input type="text" class="form-control" placeholder="Nashaqi" required />
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label class="small font-weight-bold">ASAL DEPARTEMEN</label>
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Contoh: Sistem Informasi" />
-                  </div>
+                  <input type="text" class="form-control" placeholder="Contoh: Sistem Informasi" required />
                 </div>
 
                 <div class="row">
                   <div class="col-md-6 form-group">
                     <label class="small font-weight-bold">WHATSAPP</label>
-                    <input type="text" class="form-control" placeholder="08xxxx" />
+                    <input type="text" class="form-control" placeholder="08xxxx" required />
                   </div>
                   <div class="col-md-6 form-group">
                     <label class="small font-weight-bold">NRP (EMAIL STUDENT)</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="5026..." />
+                        <input type="text" class="form-control" placeholder="5026..." required />
                         <div class="input-group-append">
                             <span class="input-group-text bg-light border-left-0" style="border-radius: 0 10px 10px 0">@its.ac.id</span>
                         </div>
@@ -249,5 +234,21 @@
         </div>
       </div>
     </div>
+
+    <script>
+      $(document).ready(function () {
+        // Inisialisasi Carousel via JavaScript
+        $('#musicSlider').carousel({
+          interval: 2500, 
+          pause: 'hover',
+          wrap: true      
+        });
+
+        // Contoh tambahan: Deteksi saat slide berubah
+        $('#musicSlider').on('slide.bs.carousel', function () {
+          console.log('pindah slide');
+        });
+      });
+    </script>
   </body>
 </html>
